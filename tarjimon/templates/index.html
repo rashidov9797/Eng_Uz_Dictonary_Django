@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English-Uzbek translation</title>
+  <link rel="stylesheet" href="{% static '/Semantic-UI-CSS-master/semantic.min.css' %}">
+</head>
+<body>
+
+
+  <!-- MENU -->
+  <h2 style="margin-top: 40px; margin-bottom: 100px;" class=' ui center aligned icon green header '>Bepul onlayn tarjimon</h2>
+      
+      <!-- <div class="left floated column"><img class="ui header small image" src="{% static '/kore.jpg' %}"></div> -->
+    
+  <!-- CONTAINER -->
+
+  <div class="ui container">
+    <div class="ui placeholder segment">
+      <div class="ui icon header">
+        Inglizcha - O'zbekcha tarjimon
+      </div>
+      <div class="inline" style='width:90%;'>
+        <div class="ui massive form search">
+          <form method='GET' action=' / ' class="ui icon input" style='width:90%;'>
+            <input name="q" value="{{q}}" type="text" class="promt" placeholder="So'zni kiriting...">
+            <i class="search link icon">            
+            </i>
+  
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Words list -->
+
+  <div class="ui pilet segment">
+    <h4 class="ui header">
+      Natija
+    </h4>
+    <table class='ui celled large green table'>
+      <thead>
+        <tr>
+          <th> <i class="england flag"></i> Inglizcha</th>
+          <th> <i class="uzbekistan flag"></i>  O'zbekcha</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        {% if natija %}
+        {% for tarjima in natija %}
+        <tr>
+          <td>{{tarjima.english}}</td>
+          <td>{{tarjima.uzbek}}</td>
+        
+        </tr>
+        {% endfor %}
+        {% endif %}
+      </tbody>
+ 
+    </table>
+  </div>
+  
+</body>
+</html>
